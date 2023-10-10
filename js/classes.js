@@ -1,11 +1,14 @@
 class Sprite {
-    constructor({ position }) {
+    constructor({ position, imageSrc }) {
         this.position = position;
         this.height = 150;
         this.width = 50;
+        this.image = new Image()
+        this.image.src = imageSrc;
     }
 
     draw() {
+        c.drawImage(this.image,this.position.x,this.position.y);
     }
 
     update() {
@@ -33,6 +36,7 @@ class Fighter {
                 y: this.position.y
             },
             offset, //offset: offset, 
+            
             width: 100,
             height: 50
         }
