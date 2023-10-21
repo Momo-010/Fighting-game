@@ -66,7 +66,8 @@ class Fighter extends Sprite {
     imageSrc,
     scale = 1,
     framesMax = 1,
-    offset = { x: 0, y: 0 }
+    offset = { x: 0, y: 0 },
+    sprites
   }) {
     super({
       position,
@@ -76,9 +77,6 @@ class Fighter extends Sprite {
       offset
     });
 
-    this.framesCurrent = 0;
-    this.framesElapsed = 0;
-    this.framesHold = 5;
     this.velocity = velocity;
     this.height = 150;
     this.width = 50;
@@ -89,13 +87,23 @@ class Fighter extends Sprite {
         y: this.position.y,
       },
       offset, //offset: offset,
-
       width: 100,
       height: 50,
     };
     this.color = color;
     this.isAttacking;
     this.health = 100;
+    this.framesCurrent = 0;
+    this.framesElapsed = 0;
+    this.framesHold = 5;
+    this.sprites = sprites;
+
+    for(const sprite in this.sprites){
+        sprites[sprite].image = new Image()
+        sprites[sprite].image.src = sprites[sprite].imageSrc
+    }
+
+    console.log(this.sprites);
   }
 
   update() {
