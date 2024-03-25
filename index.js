@@ -43,7 +43,7 @@ const player = new Fighter({
   framesMax: 8,
   scale: 2.5,
   offset: {
-    x: 215,
+    x: 0,
     y: 157,
   },
   sprites: {
@@ -66,8 +66,16 @@ const player = new Fighter({
     attack1:{
       imageSrc: "./img/samuraiMack/Attack1.png",
       framesMax: 6
+    },
+  },
+    attackBox: {
+      offset: {
+        x:0,
+        y:0
+      },
+      width:100,
+      height: 50
     }
-  }
 });
 
 const enemy = new Fighter({
@@ -111,8 +119,16 @@ const enemy = new Fighter({
     attack1:{
       imageSrc: "./img/Kenji/Attack1.png",
       framesMax: 4
+    },
+  },
+    attackBox: {
+      offset: {
+        x:0,
+        y:0
+      },
+      width:100,
+      height: 50
     }
-  }
 });
 
 const keys = {
