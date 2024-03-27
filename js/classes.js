@@ -111,13 +111,18 @@ class Fighter extends Sprite {
     this.draw();
     this.animateFrames();   
 
+    //Attack Boxes
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
-    this.attackBox.position.y = this.position.y;
+    this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
-    c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
+    //Draw the attack box
+    // c.fillRect
+    //   (this.attackBox.position.x, 
+    //   this.attackBox.position.y, 
+    //   this.attackBox.width, 
+    //   this.attackBox.height)
 
     this.position.x += this.velocity.x;
-
     this.position.y += this.velocity.y;
 
     //Gravity function
@@ -130,9 +135,6 @@ class Fighter extends Sprite {
   atttack() {
     this.switchSprite('attack1')
     this.isAttacking = true;
-    setTimeout(() => {
-      this.isAttacking = false;
-    }, 100);
   }
   
   switchSprite(sprite){
